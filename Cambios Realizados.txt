@@ -1,0 +1,13 @@
+Agregue:
+Mixins en:
+-logos de redes sociales
+Extends en: 
+-fotosInicio
+
+SEO:
+Agregue los meta:
+Keywords: 
+-Venta, Compra, Ropa, Lenceria, Bikinis, Ropa Interior, Longchamps
+Description: 
+-En este sitio web encontraras la mejor lenceria para tu tu cuerpo.. tenemos mucha ropa interior y bikinis para que elijas la que mas te guste. No dudes en consultarnos!
+

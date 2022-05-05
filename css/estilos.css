@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.medFotosInicio, .fotosInicio1, .fotosInicio2, .fotosInicio3 {
+  padding: 20px;
+  margin: 10px;
+  text-align: center; }
+  .medFotosInicio .dibujo, .fotosInicio1 .dibujo, .fotosInicio2 .dibujo, .fotosInicio3 .dibujo {
+    width: 400px;
+    height: 400px; }
+
+body {
+  font-family: 'Lora', serif; }
+
+.contenedorInicio {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, auto);
+  grid-template-areas: "header header header" "contenedorPadre contenedorPadre contenedorPadre" "contenedorMenu contenedorMenu contenedorMenu" "bannerSecundario bannerSecundario bannerSecundario" "fotosInicio1 fotosInicio2 fotosInicio3" "presentacionInicio presentacionInicio presentacionInicio" "footer footer footer"; }
+
+.header {
+  grid-area: header; }
+  .header .contenedorBanner {
+    background-color: #8f3c76;
+    color: white;
+    height: auto; }
+    .header .contenedorBanner .enlaceig {
+      text-align: center; }
+      .header .contenedorBanner .enlaceig a {
+        text-decoration: none;
+        color: white; }
+    .header .contenedorBanner .mail {
+      display: flex;
+      justify-content: flex-end; }
+
+.contenedorPadre {
+  grid-area: contenedorPadre;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; }
+  .contenedorPadre .contenedorLogo .logo {
+    margin: 10px;
+    display: inline-flex;
+    justify-content: flex-start; }
+  .contenedorPadre .contenedorTitulo {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: 'Lora', serif; }
+
+/* Menu*/
+.contenedorMenu {
+  grid-area: contenedorMenu;
+  background-color: #8f3c76; }
+  .contenedorMenu .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+    .contenedorMenu .menu li {
+      padding: 20px;
+      display: flex; }
+      .contenedorMenu .menu li a {
+        color: white;
+        text-decoration: none;
+        font-size: 30px; }
+        .contenedorMenu .menu li a:hover {
+          background-color: #cc84f5;
+          color: black;
+          font-weight: bold;
+          border-radius: 15%; }
+  .contenedorMenu div .logowp {
+    width: 60px;
+    height: 60px;
+    bottom: 10px;
+    position: fixed;
+    right: 5px;
+    transition: all 1s; }
+    .contenedorMenu div .logowp:hover {
+      transform: scale(1.2, 1.2); }
+  .contenedorMenu div .logoig {
+    width: 60px;
+    height: 60px;
+    bottom: 80px;
+    position: fixed;
+    right: 5px;
+    transition: all 1s; }
+    .contenedorMenu div .logoig:hover {
+      transform: scale(1.2, 1.2); }
+
+.bannerSecundario {
+  grid-area: bannerSecundario;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  font-size: large; }
+
+.fotosInicio1 {
+  grid-area: fotosInicio1; }
+
+.fotosInicio2 {
+  grid-area: fotosInicio2; }
+
+.fotosInicio3 {
+  grid-area: fotosInicio3; }
+
+.presentacionInicio {
+  grid-area: presentacionInicio;
+  border: solid black;
+  margin: 10px 20px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; }
+
+.footer {
+  grid-area: footer;
+  background-color: #8f3c76; }
+  .footer div h3 {
+    color: white; }
+  .footer div section .tarjetas {
+    width: 70px;
+    height: 70px;
+    margin: 10px; }
+
+/*mediaquerries para celular*/
+@media (max-width: 576px) {
+  .contenedorInicio {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas: "header" "contenedorPadre" "contenedorMenu" "bannerSecundario" "fotosInicio1" "fotosInicio2" "fotosInicio3" "presentacionInicio" "footer"; } }
+
+/*mediaquerries para tablets and desktop*/
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .contenedorInicio {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas: "header" "contenedorPadre" "contenedorMenu" "bannerSecundario" "fotosInicio1" "fotosInicio2" "fotosInicio3" "presentacionInicio" "footer"; } }

@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// variables //
+$fbarra:rgb(143, 60, 118);
+$bottomig: 80px;
+$bottomwp:10px;
+
+@mixin logoredes($bottom) {
+    width: 60px;
+    height: 60px;
+    bottom: $bottom;
+    position: fixed;
+    right: 5px;
+    transition: all 1s;
+}
+/*class para extend*/
+.medFotosInicio {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+
+    .dibujo {
+        width: 400px;
+        height: 400px;
+
+    }
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.contenedorInicio {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+        "header header header"
+        "contenedorPadre contenedorPadre contenedorPadre"
+        "contenedorMenu contenedorMenu contenedorMenu"
+        "bannerSecundario bannerSecundario bannerSecundario"
+        "fotosInicio1 fotosInicio2 fotosInicio3"
+        "presentacionInicio presentacionInicio presentacionInicio"
+        "footer footer footer";
+}
+
+.header {
+    grid-area: header;
+
+    .contenedorBanner {
+        background-color: $fbarra;
+        color: white;
+        height: auto;
+
+        .enlaceig {
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .mail {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.contenedorPadre {
+    grid-area: contenedorPadre;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    .contenedorLogo {
+        .logo {
+            margin: 10px;
+            display: inline-flex;
+            justify-content: flex-start;
+        }
+    }
+
+    .contenedorTitulo {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        font-family: 'Lora', serif;
+    }
+}
+
+/* Menu*/
+.contenedorMenu {
+    grid-area: contenedorMenu;
+    background-color: $fbarra;
+
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            padding: 20px;
+            display: flex;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 30px;
+
+                &:hover {
+                    background-color: rgb(204, 132, 245);
+                    color: black;
+
+                    font-weight: bold;
+                    border-radius: 15%;
+
+                }
+            }
+        }
+    }
+
+    div {
+        .logowp {
+            @include logoredes($bottomwp);
+
+            &:hover {
+                transform: scale(1.2, 1.2);
+            }
+        }
+
+        .logoig {
+            @include logoredes($bottomig);
+
+            &:hover {
+                transform: scale(1.2, 1.2);
+            }
+        }
+
+
+    }
+}
+
+.bannerSecundario {
+    grid-area: bannerSecundario;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+
+.fotosInicio1 {
+    @extend .medFotosInicio;
+    grid-area: fotosInicio1;
+}
+
+.fotosInicio2 {
+    @extend .medFotosInicio;
+    grid-area: fotosInicio2;
+}
+
+.fotosInicio3 {
+    @extend .medFotosInicio;
+    grid-area: fotosInicio3;
+}
+
+.presentacionInicio {
+    grid-area: presentacionInicio;
+    border: solid black;
+    margin: 10px 20px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: $fbarra;
+
+    div {
+        h3 {
+            color: white
+        }
+
+        section {
+            .tarjetas {
+                width: 70px;
+                height: 70px;
+                margin: 10px;
+            }
+        }
+    }
+}
+
+/*mediaquerries para celular*/
+@media (max-width: 576px) {
+    .contenedorInicio {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+        grid-template-areas:
+            "header"
+            "contenedorPadre"
+            "contenedorMenu"
+            "bannerSecundario"
+            "fotosInicio1"
+            "fotosInicio2"
+            "fotosInicio3"
+            "presentacionInicio"
+            "footer";
+    }
+}
+
+/*mediaquerries para tablets and desktop*/
+@media screen and (min-width:576px) and (max-width:992px) {
+    .contenedorInicio {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+        grid-template-areas:
+            "header"
+            "contenedorPadre"
+            "contenedorMenu"
+            "bannerSecundario"
+            "fotosInicio1"
+            "fotosInicio2"
+            "fotosInicio3"
+            "presentacionInicio"
+            "footer";
+    }
+}
